@@ -204,6 +204,14 @@
 			path = "Target Support Files/Pods-SwipePopViewController_Tests";
 			sourceTree = "<group>";
 		};
+		733B3F6325BB41000045894B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				733B3F5925BB3EAD0045894B /* SomeClass.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		8215C6EBB202651CF4B848CFDEBA37E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +357,7 @@
 		FE987CFAF79C6F8CFBAACFEF319E1EAF /* SwipePopViewController */ = {
 			isa = PBXGroup;
 			children = (
-				733B3F5925BB3EAD0045894B /* SomeClass.swift */,
+				733B3F6325BB41000045894B /* Classes */,
 				FD41EBFB338011B02687DA917E5B54B9 /* Pod */,
 				AE1080EE78BF037ACFA9CA11A7D26E86 /* Support Files */,
 			);
