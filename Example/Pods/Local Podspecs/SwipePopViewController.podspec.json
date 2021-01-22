@@ -1,0 +1,22 @@
+{
+  "name": "SwipePopViewController",
+  "version": "0.1.0",
+  "summary": "A short description of SwipePopViewController.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/chalermpong/SwipePopViewController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chalermpong": "s_pong_c@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/chalermpong/SwipePopViewController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "SwipePopViewController/Classes/**/*"
+}
