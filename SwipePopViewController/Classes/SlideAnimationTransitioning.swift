@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class SlideAnimatedTransitioning: NSObject {
+class SlideAnimatedTransitioning: NSObject {
 }
 
 extension SlideAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
