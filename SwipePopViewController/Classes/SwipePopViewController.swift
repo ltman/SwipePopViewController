@@ -33,30 +33,36 @@ enum ViewAssociatedKeys {
     static var selfNavigationControllerDelegate = "self_navigation_controller_delegate"
     static var percentDrivenInteractiveTransition = "percent_drivenInteractive_transition"
     static var panGestureInteractor = "pan_gesture_interactor"
+    static var swipePopNavigationControllerDelegate = "swipe_pop_navigation_controller_delegate"
 }
 
 public extension UIViewController {
-    private var firstTranslation: CGFloat? {
+    fileprivate var firstTranslation: CGFloat? {
         get { return ao_get(pkey: &ViewAssociatedKeys.firstTranslation) as? CGFloat }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.firstTranslation) }
     }
     
-    private var panGestureRecognizer: UIPanGestureRecognizer? {
+    fileprivate var panGestureRecognizer: UIPanGestureRecognizer? {
         get { return ao_get(pkey: &ViewAssociatedKeys.panGestureRecognizer) as? UIPanGestureRecognizer }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.panGestureRecognizer) }
     }
     
-    private var selfNavigationControllerDelegate: UINavigationControllerDelegate? {
+    fileprivate var selfNavigationControllerDelegate: UINavigationControllerDelegate? {
         get { return ao_get(pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) as? UINavigationControllerDelegate }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) }
     }
     
-    private var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition? {
+    fileprivate var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition? {
         get { return ao_get(pkey: &ViewAssociatedKeys.percentDrivenInteractiveTransition) as? UIPercentDrivenInteractiveTransition }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.percentDrivenInteractiveTransition) }
     }
     
-    @objc func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
+    fileprivate var swipePopNavigationControllerDelegate: SwipePopNavigationControllerDelegate? {
+        get { return ao_get(pkey: &ViewAssociatedKeys.swipePopNavigationControllerDelegate) as? SwipePopNavigationControllerDelegate }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.swipePopNavigationControllerDelegate) }
+    }
+    
+    @objc fileprivate func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
         guard let view = self.view else { return }
         let percent = self.firstTranslation != nil ? max(panGesture.translation(in: view).x - self.firstTranslation!, 0) / view.frame.width : 0
         
@@ -64,7 +70,7 @@ public extension UIViewController {
         case .began:
             if panGesture.velocity(in: view).x > 0 {
                 self.selfNavigationControllerDelegate = navigationController?.delegate
-                self.navigationController?.delegate = self
+                self.navigationController?.delegate = swipePopNavigationControllerDelegate
                 _ = self.navigationController?.popViewController(animated: true)
             }
         case .changed:
@@ -99,15 +105,16 @@ public extension UIViewController {
         guard self.navigationController?.viewControllers.first != self else {
             return
         }
-
+        
         guard self.navigationController?.viewControllers.count > 1 else {
             return
         }
-
+        
         guard panGestureRecognizer == nil else {
             return
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.swipePopNavigationControllerDelegate = SwipePopNavigationControllerDelegate(viewControllerDelegate: self)
         self.panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:)))
         self.panGestureRecognizer?.cancelsTouchesInView = true
         self.panGestureRecognizer?.delaysTouchesBegan = true
@@ -119,20 +126,26 @@ public extension UIViewController {
     }
 }
 
-extension UIViewController : UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-            return SlideAnimatedTransitioning()
+class SwipePopNavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
+    weak var viewControllerDelegate: UIViewController?
+    
+    init(viewControllerDelegate: UIViewController?) {
+        self.viewControllerDelegate = viewControllerDelegate
     }
     
-    public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        navigationController.delegate = self.selfNavigationControllerDelegate
-        if self.panGestureRecognizer?.state == .began && self.panGestureRecognizer?.velocity(in: view).x > 0 {
-            self.percentDrivenInteractiveTransition = UIPercentDrivenInteractiveTransition()
-            self.percentDrivenInteractiveTransition?.completionCurve = .easeInOut
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideAnimatedTransitioning()
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        guard let viewControllerDelegate = viewControllerDelegate else { return nil }
+        navigationController.delegate = viewControllerDelegate.selfNavigationControllerDelegate
+        if viewControllerDelegate.panGestureRecognizer?.state == .began && viewControllerDelegate.panGestureRecognizer?.velocity(in: viewControllerDelegate.view).x > 0 {
+            viewControllerDelegate.percentDrivenInteractiveTransition = UIPercentDrivenInteractiveTransition()
+            viewControllerDelegate.percentDrivenInteractiveTransition?.completionCurve = .easeInOut
         } else {
-            self.percentDrivenInteractiveTransition = nil
+            viewControllerDelegate.percentDrivenInteractiveTransition = nil
         }
-        
-        return self.percentDrivenInteractiveTransition
+        return viewControllerDelegate.percentDrivenInteractiveTransition
     }
 }
