@@ -19,7 +19,6 @@
 		40039E0AF0D764360B1D4FC4F7950D2E /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		48D84462649B0CB7F05B6727127438F6 /* SwipePopViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 332B34DE01A2A8BF3CDA94858309D2C6 /* SwipePopViewController-dummy.m */; };
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */; };
-		733B3F6E25BB42150045894B /* SomeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733B3F6C25BB42150045894B /* SomeClass.swift */; };
 		75DCA71BA737271AC5603E4B1B4E4406 /* Pods-SwipePopViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E327E48DA651F51FF52FA7DE7EDA982E /* Pods-SwipePopViewController_Example-dummy.m */; };
 		88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */; };
 		8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B6BE10C665F515606A22FD60C6DCC /* FBSnapshotTestCase.m */; };
@@ -98,7 +97,6 @@
 		6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		6F2B3206D86484335743AB17BCA83427 /* Pods-SwipePopViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwipePopViewController_Tests.modulemap"; sourceTree = "<group>"; };
 		71FE1C8B35AE29B09F985A6F367EBC9F /* Pods-SwipePopViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwipePopViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		733B3F6C25BB42150045894B /* SomeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeClass.swift; sourceTree = "<group>"; };
 		7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		81A6139BDE0D5E5D70063FFCF03C8B71 /* Pods-SwipePopViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwipePopViewController_Example-umbrella.h"; sourceTree = "<group>"; };
 		88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				CA8F220225BE7C78009C79EF /* AssociationPolicy.swift */,
 				CA8F220325BE7C78009C79EF /* SlideAnimationTransitioning.swift */,
 				CA8F220425BE7C78009C79EF /* SwipePopViewController.swift */,
-				733B3F6C25BB42150045894B /* SomeClass.swift */,
 			);
 			name = Classes;
 			path = SwipePopViewController/Classes;
@@ -567,7 +564,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8F220725BE7C78009C79EF /* SwipePopViewController.swift in Sources */,
-				733B3F6E25BB42150045894B /* SomeClass.swift in Sources */,
 				48D84462649B0CB7F05B6727127438F6 /* SwipePopViewController-dummy.m in Sources */,
 				CA8F220625BE7C78009C79EF /* SlideAnimationTransitioning.swift in Sources */,
 				CA8F220525BE7C78009C79EF /* AssociationPolicy.swift in Sources */,

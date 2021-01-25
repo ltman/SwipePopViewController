@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     @IBAction func tapPushVC(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "viewController")
-        let s = SomeClass()
-        print("\(s.hello())")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
