@@ -49,7 +49,7 @@ public extension UIViewController {
     
     fileprivate var selfNavigationControllerDelegate: UINavigationControllerDelegate? {
         get { return ao_get(pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) as? UINavigationControllerDelegate }
-        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) }
+        set { ao_setWeak(newValue, pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) }
     }
     
     fileprivate var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition? {
@@ -61,6 +61,7 @@ public extension UIViewController {
         get { return ao_get(pkey: &ViewAssociatedKeys.swipePopNavigationControllerDelegate) as? SwipePopNavigationControllerDelegate }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.swipePopNavigationControllerDelegate) }
     }
+    
     
     @objc fileprivate func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
         guard let view = self.view else { return }
@@ -111,6 +112,7 @@ public extension UIViewController {
         }
         
         guard panGestureRecognizer == nil else {
+            // PS: If there is a panGestureRecognizer already, We have not to add the gesture again.
             return
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
