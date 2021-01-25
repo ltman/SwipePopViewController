@@ -33,6 +33,9 @@
 		C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C891FEB74F3F5B27155AB073DC230549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		CA63ADACAC6C2BF1E30108E6BEF68A09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		CA8F220525BE7C78009C79EF /* AssociationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F220225BE7C78009C79EF /* AssociationPolicy.swift */; };
+		CA8F220625BE7C78009C79EF /* SlideAnimationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F220325BE7C78009C79EF /* SlideAnimationTransitioning.swift */; };
+		CA8F220725BE7C78009C79EF /* SwipePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F220425BE7C78009C79EF /* SwipePopViewController.swift */; };
 		D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E1DED9776345FE274E2B7C776D473A8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */; };
@@ -113,6 +116,9 @@
 		B6F29E9338191DA136249C132D475549 /* SwipePopViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipePopViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7103CA00AED20722C5B69CA5B4F6938 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
 		BA299A691CC1F16962544DCB21F0950E /* SwipePopViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipePopViewController-umbrella.h"; sourceTree = "<group>"; };
+		CA8F220225BE7C78009C79EF /* AssociationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociationPolicy.swift; sourceTree = "<group>"; };
+		CA8F220325BE7C78009C79EF /* SlideAnimationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimationTransitioning.swift; sourceTree = "<group>"; };
+		CA8F220425BE7C78009C79EF /* SwipePopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipePopViewController.swift; sourceTree = "<group>"; };
 		CB1C0965EAB0C0D35D17CCA04ED01342 /* SwipePopViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipePopViewController-prefix.pch"; sourceTree = "<group>"; };
 		CBFF6C5FD9C3A84274A9314D3E940B6E /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		CE946AEBCDAB1B8D9504DED0B06555A4 /* Pods_SwipePopViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipePopViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +213,9 @@
 		733B3F6B25BB42150045894B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CA8F220225BE7C78009C79EF /* AssociationPolicy.swift */,
+				CA8F220325BE7C78009C79EF /* SlideAnimationTransitioning.swift */,
+				CA8F220425BE7C78009C79EF /* SwipePopViewController.swift */,
 				733B3F6C25BB42150045894B /* SomeClass.swift */,
 			);
 			name = Classes;
@@ -557,8 +566,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8F220725BE7C78009C79EF /* SwipePopViewController.swift in Sources */,
 				733B3F6E25BB42150045894B /* SomeClass.swift in Sources */,
 				48D84462649B0CB7F05B6727127438F6 /* SwipePopViewController-dummy.m in Sources */,
+				CA8F220625BE7C78009C79EF /* SlideAnimationTransitioning.swift in Sources */,
+				CA8F220525BE7C78009C79EF /* AssociationPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
