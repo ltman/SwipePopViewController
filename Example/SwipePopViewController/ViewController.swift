@@ -14,14 +14,17 @@ class ViewController: UIViewController {
     @IBAction func tapPushVC(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "viewController")
-        let s = SomeClass()
-        print("\(s.hello())")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addSwipeBackGesture()
     }
 
     override func didReceiveMemoryWarning() {
