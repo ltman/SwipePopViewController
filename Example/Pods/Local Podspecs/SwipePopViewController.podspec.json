@@ -1,9 +1,9 @@
 {
   "name": "SwipePopViewController",
   "version": "0.1.0",
-  "summary": "A short description of SwipePopViewController.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/chalermpong/SwipePopViewController",
+  "summary": "Swipe right to pop the current View Controller",
+  "description": "Swipe right anywhere in View Controller to pop it out!",
+  "homepage": "https://github.com/ltman/SwipePopViewController",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,13 @@
     "chalermpong": "s_pong_c@hotmail.com"
   },
   "source": {
-    "git": "https://github.com/chalermpong/SwipePopViewController.git",
+    "git": "https://github.com/ltman/SwipePopViewController.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "SwipePopViewController/Classes/**/*"
+  "swift_versions": "5.0",
+  "source_files": "SwipePopViewController/Classes/**/*",
+  "swift_version": "5.0"
 }
