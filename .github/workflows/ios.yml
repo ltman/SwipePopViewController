@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - name: Prepare machine
-      run: |
-        brew install xcbeautify
-        bundle install
+        run: |
+          brew install xcbeautify
+          bundle install
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
