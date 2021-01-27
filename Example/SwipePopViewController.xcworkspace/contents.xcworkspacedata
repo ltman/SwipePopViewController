@@ -4,6 +4,9 @@
    <FileRef
       location = "group:../Gemfile">
    </FileRef>
+   <FileRef
+      location = "group:../Gemfile.lock">
+   </FileRef>
    <Group
       location = "group:../fastlane"
       name = "fastlane">
