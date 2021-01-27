@@ -18,6 +18,11 @@ class Tests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
+    func testFailed() {
+        // This is an example of a functional test case.
+        XCTAssert(false, "Pass")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure() {
