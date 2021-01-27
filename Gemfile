@@ -1,1 +1,3 @@
-gem trainer
+source "https://rubygems.org"
+
+gem "trainer"

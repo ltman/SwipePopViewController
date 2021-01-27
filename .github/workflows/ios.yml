@@ -15,7 +15,7 @@ jobs:
       - name: Prepare machine
         run: |
           brew install xcbeautify
-          bundle install
+          bundle install --path vendor/bundle
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
@@ -31,9 +31,4 @@ jobs:
           device=`instruments -s -devices | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}'`
           set -o pipefail && xcodebuild test-without-building -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device" | xcbeautify
           trainer
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1.6
-        if: always()
-        with:
-          files: test-results/**/*.xml
 
