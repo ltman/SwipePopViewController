@@ -14,22 +14,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Prepare machine
+      - name: Prepare tools
         run: |
-          brew install xcbeautify
-          gem install trainer
-      - name: Build
-        env:
-          platform: ${{ 'iOS Simulator' }}
+          bundle install
+      - name: Build and Test
         run: |
-          device=`instruments -s -devices | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}'`
-          set -o pipefail && xcodebuild build-for-testing -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device" | xcbeautify
-      - name: Test
-        env:
-          platform: ${{ 'iOS Simulator' }}
-        run: |
-          device=`instruments -s -devices | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}'`
-          set -o pipefail && xcodebuild test-without-building -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device" | xcbeautify
-          trainer
-          ls -al
+          fastlane test
 
