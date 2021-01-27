@@ -24,9 +24,13 @@ platform :ios do
     scan(
       workspace: "Example/SwipePopViewController.xcworkspace",
       scheme: "SwipePopViewController-Example",
-      output_types: "",
+      derived_data_path: "DerivedData",
+      disable_xcpretty: false,
       fail_build: false
     )
-    trainer(output_directory: ".")
+    trainer(
+      output_directory: ".",
+      path: "DerivedData"
+    )
   end
 end
