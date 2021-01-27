@@ -14,8 +14,10 @@ jobs:
     steps:
       - name: Prepare machine
         run: |
+          pwd
           brew install xcbeautify
-          bundle install --path vendor/bundle
+          bundle config set --local path 'vendor/bundle'
+          bundle install
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
