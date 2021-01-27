@@ -1,4 +1,4 @@
-name: iOS starter workflow
+name: Check module function
 
 on:
   push:
@@ -16,15 +16,20 @@ jobs:
         uses: actions/checkout@v2
       - name: Build
         env:
-          scheme: ${{ 'default' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
+          brew install xcbeautify
           device=`instruments -s -devices | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}'`
-          xcodebuild build-for-testing -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device"
+          set -o pipefail && xcodebuild build-for-testing -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device" | xcbeautify
       - name: Test
         env:
-          scheme: ${{ 'default' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
           device=`instruments -s -devices | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}'`
-          xcodebuild test-without-building -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device"
+          set -o pipefail && xcodebuild test-without-building -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device" | xcbeautify
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.6
+        if: always()
+        with:
+          files: test-results/**/*.xml
+
