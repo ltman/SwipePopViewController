@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Build and Test using any available iPhone simulator
     runs-on: macos-latest
 
     steps:
@@ -31,5 +31,6 @@ jobs:
         run: |
           device=`instruments -s -devices | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}'`
           set -o pipefail && xcodebuild test-without-building -workspace Example/SwipePopViewController.xcworkspace -scheme SwipePopViewController-Example  -destination "platform=$platform,name=$device" | xcbeautify
-          trainer
+          trainer --output_directory .
+          ls -al
 
