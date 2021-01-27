@@ -20,5 +20,5 @@ jobs:
           bundle install
       - name: Build and Test
         run: |
-          fastlane test
+          bundle exec fastlane test
 
