@@ -17,8 +17,7 @@ jobs:
       - name: Prepare machine
         run: |
           brew install xcbeautify
-          bundle config set --local path 'vendor/bundle'
-          bundle install
+          gem install trainer
       - name: Build
         env:
           platform: ${{ 'iOS Simulator' }}
