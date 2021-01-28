@@ -39,13 +39,24 @@ class SwipeHandleGestureTests: XCTestCase {
         XCTAssertTrue(navigationController.didPopViewController)
     }
     
-    func testHandleGestureChangedState() {
+    func testHandleGestureChangedStateStart() {
         let pan = PanGestureChangedStateMock()
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
         XCTAssertEqual(viewController.firstTranslation, 10)
         XCTAssertEqual(percentDrivenMock.updatePercentComplete, 0)
+    }
+    
+    func testHandleGestureChangedStateUpdating() {
+        let pan = PanGestureChangedStateMock()
+        viewController.firstTranslation = 0
+        viewController.view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        viewController.percentDrivenInteractiveTransition = percentDrivenMock
+        viewController.handlePanGesture(pan)
+        
+        XCTAssertEqual(viewController.firstTranslation, 0)
+        XCTAssertEqual(percentDrivenMock.updatePercentComplete, 0.1)
     }
     
     func testHandleGestureEndedStateFinish() {
