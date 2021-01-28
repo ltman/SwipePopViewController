@@ -20,7 +20,7 @@ class AddSwipePopViewControllerTests: XCTestCase {
         XCTAssertNotNil(mockSecondSwipeViewController.panGestureRecognizer)
     }
     
-    func testAddSwipePopDublicate() {
+    func testAddSwipePopDouble() {
         let firstViewController = UIViewController()
         let secondViewController = UIViewController()
         let navigationController = UINavigationController()

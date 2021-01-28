@@ -4,7 +4,7 @@ import XCTest
 import SwipePopViewController
 
 class SwipePopNavigationControllerDelegateTests: XCTestCase {
-    func testInteractionController() {
+    func testInteractionControllerFor() {
         let firstViewController = UIViewController()
         let secondViewController = UIViewController()
         let navigationController = UINavigationControllerMock()
