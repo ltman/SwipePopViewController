@@ -7,6 +7,7 @@ class SwipeHandleGestureTests: XCTestCase {
     var navigationController: UINavigationControllerMock!
     var viewController: UIViewController!
     var percentDrivenMock: UIPercentDrivenInteractiveTransitionMock!
+    var originalNavigationControllerDelegate: UINavigationControllerDelegate! = NavigationControllerDelegateMock()
     
     override func setUp() {
         super.setUp()
@@ -15,9 +16,9 @@ class SwipeHandleGestureTests: XCTestCase {
         navigationController = UINavigationControllerMock()
         percentDrivenMock = UIPercentDrivenInteractiveTransitionMock()
 
-        navigationController.delegate = navigationController
+        navigationController.delegate = originalNavigationControllerDelegate
         navigationController.viewControllers = [firstViewController, viewController]
-        viewController.addSwipeBackGesture()
+        viewController.addSwipePopGesture()
     }
     
     override func tearDown() {
@@ -28,39 +29,41 @@ class SwipeHandleGestureTests: XCTestCase {
     }
     
     func testHandleGestureBeganState() {
-        let selfDelegate: UINavigationControllerDelegate = navigationController
-        let pan = PanGestureBeganStateMock()
+        let selfDelegate: UINavigationControllerDelegate = originalNavigationControllerDelegate
+        let pan = PanGestureRecognizerMock(mockState: .began, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 10, y: 0))
+        XCTAssertTrue(viewController.navigationController!.delegate === selfDelegate)
+        
         viewController.handlePanGesture(pan)
         
-        XCTAssertNotNil(viewController.selfNavigationControllerDelegate)
-        XCTAssertTrue(viewController.selfNavigationControllerDelegate === selfDelegate)
-        XCTAssertNotNil(viewController.swipePopNavigationControllerDelegate)
-        XCTAssertTrue(viewController.swipePopNavigationControllerDelegate === viewController.navigationController!.delegate)
+        XCTAssertTrue(viewController.selfNavigationControllerDelegate! === selfDelegate)
+        XCTAssertTrue(viewController.navigationController!.delegate === viewController.swipePopNavigationControllerDelegate!,
+            "nav delegate is replaced by our swipe pop nav delegate")
+        XCTAssertTrue(viewController.navigationController!.delegate is SwipePopNavigationControllerDelegate)
         XCTAssertTrue(navigationController.didPopViewController)
     }
     
-    func testHandleGestureChangedStateStart() {
-        let pan = PanGestureChangedStateMock()
+    func testHandleGestureFirstChanged() {
+        let pan = PanGestureRecognizerMock(mockState: .changed, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 10, y: 0))
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
-        XCTAssertEqual(viewController.firstTranslation, 10)
+        XCTAssertEqual(viewController.firstTranslation, 10, "translation.x of the 1st changed event shall be kept for later calculation")
         XCTAssertEqual(percentDrivenMock.updatePercentComplete, 0)
     }
     
     func testHandleGestureChangedStateUpdating() {
-        let pan = PanGestureChangedStateMock()
-        viewController.firstTranslation = 0
+        let pan = PanGestureRecognizerMock(mockState: .changed, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 10, y: 0))
+        viewController.firstTranslation = 5
         viewController.view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
-        XCTAssertEqual(viewController.firstTranslation, 0)
-        XCTAssertEqual(percentDrivenMock.updatePercentComplete, 0.1)
+        XCTAssertEqual(viewController.firstTranslation, 5)
+        XCTAssertEqual(percentDrivenMock.updatePercentComplete, 0.05)
     }
     
     func testHandleGestureEndedStateFinish() {
-        let pan = PanGestureEndedStateFinishMock()
+        let pan = PanGestureRecognizerMock(mockState: .ended, mockVelocity: CGPoint(x: 500, y: 0), mockTranslation: CGPoint(x: 100, y: 0))
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
@@ -69,7 +72,7 @@ class SwipeHandleGestureTests: XCTestCase {
     }
     
     func testHandleGestureEndedStateNotFinish() {
-        let pan = PanGestureEndedStateNotFinishMock()
+        let pan = PanGestureRecognizerMock(mockState: .ended, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 10, y: 0))
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
@@ -78,7 +81,7 @@ class SwipeHandleGestureTests: XCTestCase {
     }
     
     func testHandleGestureCancelledState() {
-        let pan = PanGestureCancelledStateMock()
+        let pan = PanGestureRecognizerMock(mockState: .cancelled, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 10, y: 0))
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
@@ -87,7 +90,7 @@ class SwipeHandleGestureTests: XCTestCase {
     }
     
     func testHandleGestureFailedState() {
-        let pan = PanGestureFailedStateMock()
+        let pan = PanGestureRecognizerMock(mockState: .failed, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 10, y: 0))
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         

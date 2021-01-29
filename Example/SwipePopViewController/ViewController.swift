@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addSwipeBackGesture()
+        addSwipePopGesture()
     }
 
     override func didReceiveMemoryWarning() {

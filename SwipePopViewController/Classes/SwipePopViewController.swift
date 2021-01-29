@@ -103,7 +103,7 @@ extension UIViewController {
 }
 
 public extension UIViewController {
-    func addSwipeBackGesture() {
+    func addSwipePopGesture() {
         guard self.navigationController?.viewControllers.first != self else {
             return
         }

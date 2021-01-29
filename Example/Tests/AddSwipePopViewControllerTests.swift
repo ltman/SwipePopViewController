@@ -7,8 +7,10 @@ class AddSwipePopViewControllerTests: XCTestCase {
     func testSwipePopNotAvailableInFirstViewController() {
         let mockSwipeViewController = UIViewController()
         _ = UINavigationController(rootViewController: mockSwipeViewController)
-        mockSwipeViewController.addSwipeBackGesture()
-        XCTAssertNil(mockSwipeViewController.panGestureRecognizer)
+        mockSwipeViewController.addSwipePopGesture()
+        XCTAssertNil(
+            mockSwipeViewController.panGestureRecognizer,
+            "addSwipePopGesture() shall has no effect on the 1st UIViewController of UINavigationController because it can't be pop")
     }
     
     func testSwipePopAvailableInSecondViewController() {
@@ -16,17 +18,24 @@ class AddSwipePopViewControllerTests: XCTestCase {
         let mockSecondSwipeViewController = UIViewController()
         let navigationController = UINavigationController()
         navigationController.viewControllers = [mockFirstSwipeViewController, mockSecondSwipeViewController]
-        mockSecondSwipeViewController.addSwipeBackGesture()
-        XCTAssertNotNil(mockSecondSwipeViewController.panGestureRecognizer)
+        mockSecondSwipeViewController.addSwipePopGesture()
+        XCTAssertNotNil(
+            mockSecondSwipeViewController.panGestureRecognizer,
+            "addSwipePopGesture() shall add a Pan Gesture Recognizer from the 2nd UIViewController of UINavigationController"
+        )
     }
     
-    func testAddSwipePopDouble() {
+    func testAddSwipePopMoreThanOnce() {
         let firstViewController = UIViewController()
         let secondViewController = UIViewController()
         let navigationController = UINavigationController()
         navigationController.viewControllers = [firstViewController, secondViewController]
-        secondViewController.addSwipeBackGesture()
-        secondViewController.addSwipeBackGesture()
-        XCTAssertEqual(secondViewController.view.gestureRecognizers!.count, 1)
+        secondViewController.addSwipePopGesture()
+        secondViewController.addSwipePopGesture()
+        XCTAssertEqual(
+            secondViewController.view.gestureRecognizers!.count,
+            1,
+            "addSwipePopGesture() shall has no effect if the UIViewController already called addSwipePopGesture() before"
+        )
     }
 }

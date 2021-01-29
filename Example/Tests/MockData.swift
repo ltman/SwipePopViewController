@@ -33,72 +33,37 @@ class UINavigationControllerMock: UINavigationController {
     }
 }
 
-extension UINavigationControllerMock: UINavigationControllerDelegate {}
+class NavigationControllerDelegateMock: NSObject, UINavigationControllerDelegate {}
 
-class PanGestureBeganStateMock: UIPanGestureRecognizer {
+class PanGestureRecognizerMock: UIPanGestureRecognizer {
+    var mockState: UIGestureRecognizer.State
+    
     override var state: UIGestureRecognizer.State {
-        get { .began }
-        set {}
+        get { mockState }
+        set { mockState = newValue }
     }
     
+    var mockVelocity: CGPoint
+    var velocityInViews = [UIView?]()
     override func velocity(in view: UIView?) -> CGPoint {
-        CGPoint(x: 10, y: 0)
-    }
-}
-
-class PanGestureChangedStateMock: UIPanGestureRecognizer {
-    override var state: UIGestureRecognizer.State {
-        get { .changed }
-        set {}
+        velocityInViews.append(view)
+        return mockVelocity
     }
     
+    var mockTranslation: CGPoint
+    var translationInView = [UIView?]()
     override func translation(in view: UIView?) -> CGPoint {
-        CGPoint(x: 10, y: 0)
-    }
-}
-
-class PanGestureEndedStateFinishMock: UIPanGestureRecognizer {
-    override var state: UIGestureRecognizer.State {
-        get { .ended }
-        set {}
+        translationInView.append(view)
+        return mockTranslation
     }
     
-    override func translation(in view: UIView?) -> CGPoint {
-        CGPoint(x: 100, y: 0)
-    }
-    
-    override func velocity(in view: UIView?) -> CGPoint {
-        CGPoint(x: 500, y: 0)
-    }
-}
-
-class PanGestureEndedStateNotFinishMock: UIPanGestureRecognizer {
-    override var state: UIGestureRecognizer.State {
-        get { .ended }
-        set {}
-    }
-    
-    override func translation(in view: UIView?) -> CGPoint {
-        CGPoint(x: 10, y: 0)
-    }
-    
-    override func velocity(in view: UIView?) -> CGPoint {
-        CGPoint(x: 10, y: 0)
-    }
-}
-
-
-class PanGestureCancelledStateMock: UIPanGestureRecognizer {
-    override var state: UIGestureRecognizer.State {
-        get { .cancelled }
-        set {}
-    }
-}
-
-class PanGestureFailedStateMock: UIPanGestureRecognizer {
-    override var state: UIGestureRecognizer.State {
-        get { .failed }
-        set {}
+    init(mockState: UIGestureRecognizer.State = .began,
+         mockVelocity: CGPoint = .zero,
+         mockTranslation: CGPoint = .zero) {
+        self.mockState = mockState
+        self.mockVelocity = mockVelocity
+        self.mockTranslation = mockTranslation
+        super.init(target: nil, action: nil)
     }
 }
 
