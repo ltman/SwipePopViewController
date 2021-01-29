@@ -1,6 +1,6 @@
 # SwipePopViewController
 
-[![Build & Test](https://github.com/ltman/SwipePopViewController/workflows/Check+module+function/badge.svg)](https://github.com/ltman/SwipePopViewController/actions)
+[![Build & Test](https://github.com/ltman/SwipePopViewController/workflows/Check%20module%20function/badge.svg)](https://github.com/ltman/SwipePopViewController/actions)
 [![Version](https://img.shields.io/cocoapods/v/SwipePopViewController.svg?style=flat)](https://cocoapods.org/pods/SwipePopViewController)
 [![License](https://img.shields.io/cocoapods/l/SwipePopViewController.svg?style=flat)](https://cocoapods.org/pods/SwipePopViewController)
 [![Platform](https://img.shields.io/cocoapods/p/SwipePopViewController.svg?style=flat)](https://cocoapods.org/pods/SwipePopViewController)
