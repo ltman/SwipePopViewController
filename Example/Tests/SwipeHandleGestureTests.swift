@@ -97,4 +97,13 @@ class SwipeHandleGestureTests: XCTestCase {
         XCTAssertTrue(percentDrivenMock.didCancel)
         XCTAssertNil(viewController.firstTranslation)
     }
+
+    func testOriginalDelegateKeepUsingWeak() {
+        let pan = PanGestureRecognizerMock(mockState: .ended, mockVelocity: CGPoint(x: 500, y: 0), mockTranslation: CGPoint(x: 100, y: 0))
+        viewController.percentDrivenInteractiveTransition = percentDrivenMock
+        viewController.handlePanGesture(pan)
+        originalNavigationControllerDelegate = nil
+        
+        XCTAssertNil(viewController.selfNavigationControllerDelegate)
+    }
 }

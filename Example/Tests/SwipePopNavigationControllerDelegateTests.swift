@@ -11,12 +11,12 @@ class SwipePopNavigationControllerDelegateTests: XCTestCase {
         let navigationController = UINavigationControllerMock()
         let swipePopDelegate = SwipePopNavigationControllerDelegate(viewControllerDelegate: secondViewController)
         let animatedTransitionMock = UIViewControllerAnimatedTransitioningMock()
-        navigationController.delegate = originalNavigationControllerDelegate
+        secondViewController.selfNavigationControllerDelegate = originalNavigationControllerDelegate
         navigationController.viewControllers = [firstViewController, secondViewController]
         secondViewController.panGestureRecognizer = PanGestureRecognizerMock(mockState: .began, mockVelocity: CGPoint(x: 10, y: 0), mockTranslation: CGPoint(x: 0, y: 0))
         let percentDrivenInteractiveTransitionResult = swipePopDelegate.navigationController(navigationController, interactionControllerFor: animatedTransitionMock)
         
-        XCTAssertTrue(navigationController.delegate === secondViewController.selfNavigationControllerDelegate)
+        XCTAssertTrue(navigationController.delegate === originalNavigationControllerDelegate)
         XCTAssertNotNil(percentDrivenInteractiveTransitionResult)
     }
 }
