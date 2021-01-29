@@ -36,34 +36,33 @@ fileprivate enum ViewAssociatedKeys {
     static var swipePopNavigationControllerDelegate = "swipepop.swipe_pop_navigation_controller_delegate"
 }
 
-public extension UIViewController {
-    fileprivate var firstTranslation: CGFloat? {
+extension UIViewController {
+    var firstTranslation: CGFloat? {
         get { return ao_get(pkey: &ViewAssociatedKeys.firstTranslation) as? CGFloat }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.firstTranslation) }
     }
     
-    fileprivate var panGestureRecognizer: UIPanGestureRecognizer? {
+    var panGestureRecognizer: UIPanGestureRecognizer? {
         get { return ao_get(pkey: &ViewAssociatedKeys.panGestureRecognizer) as? UIPanGestureRecognizer }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.panGestureRecognizer) }
     }
     
-    fileprivate var selfNavigationControllerDelegate: UINavigationControllerDelegate? {
+    var selfNavigationControllerDelegate: UINavigationControllerDelegate? {
         get { return ao_get(pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) as? UINavigationControllerDelegate }
         set { ao_setWeak(newValue, pkey: &ViewAssociatedKeys.selfNavigationControllerDelegate) }
     }
     
-    fileprivate var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition? {
+    var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition? {
         get { return ao_get(pkey: &ViewAssociatedKeys.percentDrivenInteractiveTransition) as? UIPercentDrivenInteractiveTransition }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.percentDrivenInteractiveTransition) }
     }
     
-    fileprivate var swipePopNavigationControllerDelegate: SwipePopNavigationControllerDelegate? {
+    var swipePopNavigationControllerDelegate: SwipePopNavigationControllerDelegate? {
         get { return ao_get(pkey: &ViewAssociatedKeys.swipePopNavigationControllerDelegate) as? SwipePopNavigationControllerDelegate }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.swipePopNavigationControllerDelegate) }
     }
     
-    
-    @objc fileprivate func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
+    @objc func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
         guard let view = self.view else { return }
         let percent = self.firstTranslation != nil ? max(panGesture.translation(in: view).x - self.firstTranslation!, 0) / view.frame.width : 0
         
@@ -101,8 +100,10 @@ public extension UIViewController {
             break
         }
     }
-    
-    func addSwipeBackGesture() {
+}
+
+public extension UIViewController {
+    func addSwipePopGesture() {
         guard self.navigationController?.viewControllers.first != self else {
             return
         }
@@ -123,7 +124,6 @@ public extension UIViewController {
         self.panGestureRecognizer?.maximumNumberOfTouches = 1
         if let gesture = self.panGestureRecognizer {
             self.view?.addGestureRecognizer(gesture)
-            self.navigationController?.interactivePopGestureRecognizer?.delegate =  self.panGestureRecognizer as? UIGestureRecognizerDelegate
         }
     }
 }
