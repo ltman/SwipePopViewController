@@ -1,4 +1,4 @@
-name: Check module function
+name: test
 
 on:
   push:
