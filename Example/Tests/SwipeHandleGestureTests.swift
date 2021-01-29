@@ -36,7 +36,8 @@ class SwipeHandleGestureTests: XCTestCase {
         viewController.handlePanGesture(pan)
         
         XCTAssertTrue(viewController.selfNavigationControllerDelegate! === selfDelegate)
-        XCTAssertTrue(viewController.navigationController!.delegate === viewController.swipePopNavigationControllerDelegate!,
+        XCTAssertTrue(
+            viewController.navigationController!.delegate === viewController.swipePopNavigationControllerDelegate!,
             "nav delegate is replaced by our swipe pop nav delegate")
         XCTAssertTrue(viewController.navigationController!.delegate is SwipePopNavigationControllerDelegate)
         XCTAssertTrue(navigationController.didPopViewController)
@@ -47,7 +48,9 @@ class SwipeHandleGestureTests: XCTestCase {
         viewController.percentDrivenInteractiveTransition = percentDrivenMock
         viewController.handlePanGesture(pan)
         
-        XCTAssertEqual(viewController.firstTranslation, 10, "translation.x of the 1st changed event shall be kept for later calculation")
+        XCTAssertEqual(
+            viewController.firstTranslation, 10,
+            "translation.x of the 1st changed event shall be kept for later calculation")
         XCTAssertEqual(percentDrivenMock.updatePercentComplete, 0)
     }
     
