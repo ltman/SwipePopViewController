@@ -16,6 +16,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "SwipePopViewControllerTests",
-            dependencies: ["SwipePopViewController"]),
+            dependencies: ["SwipePopViewController"],
+            path: "Example/Tests"),
     ]
 )
