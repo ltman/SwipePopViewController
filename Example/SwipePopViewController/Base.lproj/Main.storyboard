@@ -26,17 +26,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTd-En-6nC">
-                                <rect key="frame" x="85" y="318.5" width="205" height="30"/>
-                                <state key="normal" title="Open Another View Controller"/>
+                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
+                                <state key="normal" title="Open with native iOS Pop Gesture"/>
                                 <connections>
                                     <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IOG-yu-2XQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-EI-Gm4">
+                                <rect key="frame" x="0.0" y="368.5" width="375" height="30"/>
+                                <state key="normal" title="Open with SwipePopViewController"/>
+                                <connections>
+                                    <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oez-UK-L2P"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KbS-EI-Gm4" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="7I3-cz-09y"/>
                             <constraint firstItem="gSc-dY-JYz" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="7c7-1a-dlc"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="H9I-19-0uR"/>
+                            <constraint firstItem="QTd-En-6nC" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="OcH-6u-07r"/>
+                            <constraint firstItem="KbS-EI-Gm4" firstAttribute="top" secondItem="QTd-En-6nC" secondAttribute="bottom" constant="20" id="Zqj-z9-iiQ"/>
+                            <constraint firstItem="KbS-EI-Gm4" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="dHn-JQ-DqT"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mnz-cx-FSQ"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="top" secondItem="gSc-dY-JYz" secondAttribute="bottom" constant="20" id="qjQ-yb-TZo"/>
                         </constraints>
