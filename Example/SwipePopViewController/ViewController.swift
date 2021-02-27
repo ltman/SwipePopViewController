@@ -39,6 +39,10 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        Uncomment if want to test add gesture repeatly
+//        if mode == .native {
+//            applyNativePopGesture()
+//        }
         super.viewWillAppear(animated)
         print("viewWillAppear")
         Thread.sleep(forTimeInterval: 0.2)
@@ -73,7 +77,8 @@ class PanInteractivePopGesture: UIPanGestureRecognizer {
 
     func addInteractivePopGesture(navigationController: UINavigationController,
                                   view: UIView) {
-        if navigationController.viewControllers.count > 1 {
+        if navigationController.viewControllers.count > 1,
+           (view.gestureRecognizers?.filter({ $0 is Self }).isEmpty ?? false || view.gestureRecognizers == nil) {
             if let popGestureRecognizer = navigationController.interactivePopGestureRecognizer,
                let targets = popGestureRecognizer.value(forKey: "targets") as? NSMutableArray {
                 self.setValue(targets, forKey: "targets")
