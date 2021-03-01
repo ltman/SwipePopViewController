@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         switch mode {
         case .native:
-            addSwipePopGesture()
+            applyNativePopGesture()
         case .swipePop:
             addSwipePopGesture()
         }
@@ -56,6 +56,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func applyNativePopGesture() {
+        if (self.navigationController?.viewControllers.count ?? 0) > 1 {
+            let popGestureRecognizer = self.navigationController!.interactivePopGestureRecognizer!
+            if let targets = popGestureRecognizer.value(forKey: "targets") as? NSMutableArray {
+                let gestureRecognizer = UIPanGestureRecognizer()
+                gestureRecognizer.setValue(targets, forKey: "targets")
+                self.view.addGestureRecognizer(gestureRecognizer)
+            }
+        }
     }
 
 }
