@@ -10,15 +10,6 @@ import Foundation
 
 class PanInteractivePopGesture: UIPanGestureRecognizer {
     var firstTranslation: CGPoint = .zero
-
-    func addInteractivePopGesture(navigationController: UINavigationController,
-                                  view: UIView) {
-        if let popGestureRecognizer = navigationController.interactivePopGestureRecognizer,
-           let targets = popGestureRecognizer.value(forKey: "targets") as? NSMutableArray {
-            self.setValue(targets, forKey: "targets")
-            view.addGestureRecognizer(self)
-        }
-    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesMoved(touches, with: event)
