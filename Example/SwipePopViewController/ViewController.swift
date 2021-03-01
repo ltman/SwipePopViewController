@@ -40,11 +40,22 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Thread.sleep(forTimeInterval: 0.1)
+        print("viewWillAppear")
+        Thread.sleep(forTimeInterval: 0.2)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("viewWillDisappear")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     private func applyNativePopGesture() {
@@ -56,11 +67,6 @@ class ViewController: UIViewController {
                 self.view.addGestureRecognizer(gestureRecognizer)
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
