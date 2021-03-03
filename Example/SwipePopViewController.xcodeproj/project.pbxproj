@@ -16,7 +16,6 @@
 		607FACEC1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift */; };
 		6CE8E73F6FFDFD8AD302C2BA /* Pods_SwipePopViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBCECF2FB2495AF2F41136D /* Pods_SwipePopViewController_Example.framework */; };
 		F310DDB625EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310DDB525EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift */; };
-		F310DDBE25EF8826004CC0A5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310DDBD25EF8826004CC0A5 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		DFFDE4F5566F96D1681E4539 /* Pods-SwipePopViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipePopViewController_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SwipePopViewController_Tests/Pods-SwipePopViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2395A1EB33788096C82914 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F310DDB525EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanInteractivePopGestureTests.swift; sourceTree = "<group>"; };
-		F310DDBD25EF8826004CC0A5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +140,6 @@
 				607FACEB1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				F310DDB525EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift */,
-				F310DDBD25EF8826004CC0A5 /* MockData.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F310DDB625EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift in Sources */,
-				F310DDBE25EF8826004CC0A5 /* MockData.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,14 +29,17 @@ class PanInteractivePopGestureTests: XCTestCase {
     }
     
     func testPanInteractivePopGestureTouchesMovedBeganState() {
-        let panInteractivePopGesture = PanGestureRecognizerMock(mockState: .began, mockTranslation: CGPoint(x: 10, y: 10))
+        let panInteractivePopGesture = PanInteractivePopGesture()
+        panInteractivePopGesture.state = .began
+        panInteractivePopGesture.firstTranslation = CGPoint(x: 10, y: 10)
         panInteractivePopGesture.touchesMoved(Set<UITouch>(), with: UIEvent())
         
-        XCTAssertEqual(panInteractivePopGesture.firstTranslation, CGPoint(x: 10, y: 10))
+        XCTAssertEqual(panInteractivePopGesture.firstTranslation, CGPoint(x: -10, y: -10))
     }
     
     func testPanInteractivePopGestureTouchesMovedChangedState() {
-        let panInteractivePopGesture = PanGestureRecognizerMock(mockState: .changed, mockTranslation: CGPoint(x: 10, y: 10))
+        let panInteractivePopGesture = PanInteractivePopGesture()
+        panInteractivePopGesture.state = .changed
         panInteractivePopGesture.touchesMoved(Set<UITouch>(), with: UIEvent())
         
         XCTAssertEqual(panInteractivePopGesture.firstTranslation, .zero)
