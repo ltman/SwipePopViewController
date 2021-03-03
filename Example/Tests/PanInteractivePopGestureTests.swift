@@ -39,9 +39,11 @@ class PanInteractivePopGestureTests: XCTestCase {
     
     func testPanInteractivePopGestureTouchesMovedChangedState() {
         let panInteractivePopGesture = PanInteractivePopGesture()
+        panInteractivePopGesture.state = .began
         panInteractivePopGesture.state = .changed
+        panInteractivePopGesture.firstTranslation = CGPoint(x: 10, y: 10)
         panInteractivePopGesture.touchesMoved(Set<UITouch>(), with: UIEvent())
         
-        XCTAssertEqual(panInteractivePopGesture.firstTranslation, .zero)
+        XCTAssertEqual(panInteractivePopGesture.firstTranslation, CGPoint(x: 10, y: 10))
     }
 }
