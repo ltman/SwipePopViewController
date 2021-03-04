@@ -12,11 +12,15 @@ import SwipePopViewController
 class ViewController: UIViewController {
     
     enum Mode: Int {
+        case none
         case native
+        case panGesture
         case swipePop
     }
     
     var mode: Mode = .native
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func tapPushVC(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -26,11 +30,21 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
         switch mode {
+        case .none:
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         case .native:
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        case .panGesture:
             applyNativePopGesture()
         case .swipePop:
             addSwipePopGesture()
@@ -69,4 +83,29 @@ class ViewController: UIViewController {
         }
     }
 
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath)
+        return cell
+    }
+    
+    
+}
+
+extension ViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }

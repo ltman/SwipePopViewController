@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,40 +21,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to the Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-dY-JYz">
-                                <rect key="frame" x="118" y="277.5" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTd-En-6nC">
-                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
-                                <state key="normal" title="Open with native iOS Pop Gesture"/>
+                                <rect key="frame" x="0.0" y="517" width="375" height="30"/>
+                                <state key="normal" title="Open with Interactive Pop Gesture enabled"/>
                                 <connections>
                                     <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IOG-yu-2XQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-EI-Gm4">
-                                <rect key="frame" x="0.0" y="368.5" width="375" height="30"/>
-                                <state key="normal" title="Open with SwipePopViewController"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-EI-Gm4">
+                                <rect key="frame" x="0.0" y="567" width="375" height="30"/>
+                                <state key="normal" title="Open with native iOS Pop Gesture"/>
                                 <connections>
                                     <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oez-UK-L2P"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV5-pQ-0lS">
+                                <rect key="frame" x="0.0" y="617" width="375" height="30"/>
+                                <state key="normal" title="Open with SwipePopViewController"/>
+                                <connections>
+                                    <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1sz-Vh-3HQ"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LI4-uD-Ibh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="cbd-fV-gMp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="75g-b5-CUi">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="estimatedItemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" id="tfe-2A-mCl">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BwA-03-gp3">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="150" height="150"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-j7-Z1g">
+                                <rect key="frame" x="0.0" y="467" width="375" height="30"/>
+                                <state key="normal" title="Open without Inractive Pop Gesture"/>
+                                <connections>
+                                    <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rd1-Wy-vpO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to the Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBi-f1-jrr">
+                                <rect key="frame" x="118" y="426" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KbS-EI-Gm4" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="7I3-cz-09y"/>
-                            <constraint firstItem="gSc-dY-JYz" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="7c7-1a-dlc"/>
-                            <constraint firstItem="QTd-En-6nC" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="H9I-19-0uR"/>
+                            <constraint firstItem="UBi-f1-jrr" firstAttribute="centerX" secondItem="eaU-j7-Z1g" secondAttribute="centerX" id="CrD-83-EWF"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HV5-pQ-0lS" secondAttribute="bottom" constant="20" id="EfY-6J-ZcA"/>
+                            <constraint firstItem="HV5-pQ-0lS" firstAttribute="centerX" secondItem="KbS-EI-Gm4" secondAttribute="centerX" id="JaV-hw-pKm"/>
+                            <constraint firstItem="LI4-uD-Ibh" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="MUV-lj-TKh"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="OcH-6u-07r"/>
+                            <constraint firstItem="HV5-pQ-0lS" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="Qic-yk-SyK"/>
+                            <constraint firstItem="LI4-uD-Ibh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="Rba-FS-Ix7"/>
+                            <constraint firstItem="LI4-uD-Ibh" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="Sh8-NR-R1e"/>
+                            <constraint firstItem="eaU-j7-Z1g" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="Wa0-CO-mva"/>
+                            <constraint firstItem="eaU-j7-Z1g" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="X1l-0m-Abx"/>
                             <constraint firstItem="KbS-EI-Gm4" firstAttribute="top" secondItem="QTd-En-6nC" secondAttribute="bottom" constant="20" id="Zqj-z9-iiQ"/>
+                            <constraint firstItem="QTd-En-6nC" firstAttribute="top" secondItem="eaU-j7-Z1g" secondAttribute="bottom" constant="20" id="afY-cd-pnH"/>
                             <constraint firstItem="KbS-EI-Gm4" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="dHn-JQ-DqT"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mnz-cx-FSQ"/>
-                            <constraint firstItem="QTd-En-6nC" firstAttribute="top" secondItem="gSc-dY-JYz" secondAttribute="bottom" constant="20" id="qjQ-yb-TZo"/>
+                            <constraint firstItem="HV5-pQ-0lS" firstAttribute="top" secondItem="KbS-EI-Gm4" secondAttribute="bottom" constant="20" id="tTW-8c-0SB"/>
+                            <constraint firstItem="eaU-j7-Z1g" firstAttribute="top" secondItem="UBi-f1-jrr" secondAttribute="bottom" constant="20" id="ttg-UW-Jsk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5w5-b7-0H0"/>
+                    <connections>
+                        <outlet property="collectionView" destination="LI4-uD-Ibh" id="62D-UH-AGc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,8 +127,23 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRK-CJ-QJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to the Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9bi-Z1-nmm">
+                    <rect key="frame" x="0.0" y="0.0" width="139" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="-52" y="124.58770614692655"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
