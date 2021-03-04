@@ -19,6 +19,7 @@ class AddSwipePopViewControllerTests: XCTestCase {
         let navigationController = UINavigationController(rootViewController: mockFirstSwipeViewController)
         navigationController.pushViewController(mockSecondSwipeViewController, animated: false)
         mockSecondSwipeViewController.addSwipePopGesture()
+        XCTAssertTrue(mockSecondSwipeViewController.view.gestureRecognizers!.first is PanInteractivePopGesture)
         XCTAssertNotNil(
             mockSecondSwipeViewController.view.gestureRecognizers,
             "addSwipePopGesture() shall add a Pan Gesture Recognizer from the 2nd UIViewController of UINavigationController"
@@ -32,6 +33,7 @@ class AddSwipePopViewControllerTests: XCTestCase {
         navigationController.pushViewController(secondViewController, animated: false)
         secondViewController.addSwipePopGesture()
         secondViewController.addSwipePopGesture()
+        XCTAssertTrue(secondViewController.view.gestureRecognizers!.first is PanInteractivePopGesture)
         XCTAssertEqual(
             secondViewController.view.gestureRecognizers!.count,
             1,
