@@ -32,4 +32,8 @@ class PanInteractivePopGesture: UIPanGestureRecognizer {
         let t = super.translation(in: view)
         return CGPoint(x: t.x - firstTranslation.x, y: t.y - firstTranslation.y)
     }
+    
+    override func velocity(in view: UIView?) -> CGPoint {
+        return super.translation(in: view).x > 50 ? super.velocity(in: view) : .zero
+    }
 }
