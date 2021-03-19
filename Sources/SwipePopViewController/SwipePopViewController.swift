@@ -19,6 +19,7 @@ public extension UIViewController {
         if let popGestureRecognizer = navigationController?.interactivePopGestureRecognizer,
            let targets = popGestureRecognizer.value(forKey: "targets") as? NSMutableArray {
             let popGesture = PanInteractivePopGesture()
+            popGesture.delegate = popGesture
             popGesture.setValue(targets, forKey: "targets")
             view.addGestureRecognizer(popGesture)
         }
