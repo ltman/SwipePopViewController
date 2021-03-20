@@ -41,8 +41,8 @@ class PanInteractivePopGesture: UIPanGestureRecognizer {
 extension PanInteractivePopGesture: UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let p = gestureRecognizer as? PanInteractivePopGesture {
-            let v = p.velocity(in: nil)
-            return v.x > 0 && v.x > abs(v.y)
+            let t = p.translation(in: nil)
+            return t.x > 0 && t.x > abs(t.y)
         }
         return false
     }
