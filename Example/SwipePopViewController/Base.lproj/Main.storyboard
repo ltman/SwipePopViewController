@@ -20,23 +20,30 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to the Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-dY-JYz">
-                                <rect key="frame" x="118" y="277.5" width="139" height="21"/>
+                                <rect key="frame" x="118" y="227.5" width="139" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTd-En-6nC">
-                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
-                                <state key="normal" title="Open with native iOS Pop Gesture"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyb-sf-qON">
+                                <rect key="frame" x="48" y="268.5" width="279" height="30"/>
+                                <state key="normal" title="Open with default interactivePopGesture"/>
                                 <connections>
-                                    <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IOG-yu-2XQ"/>
+                                    <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pmn-cA-lMq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-EI-Gm4">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbS-EI-Gm4">
                                 <rect key="frame" x="0.0" y="368.5" width="375" height="30"/>
                                 <state key="normal" title="Open with SwipePopViewController"/>
                                 <connections>
                                     <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oez-UK-L2P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTd-En-6nC">
+                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
+                                <state key="normal" title="Open with native iOS Pop Gesture"/>
+                                <connections>
+                                    <action selector="tapPushVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IOG-yu-2XQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,17 +51,23 @@
                         <constraints>
                             <constraint firstItem="KbS-EI-Gm4" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="7I3-cz-09y"/>
                             <constraint firstItem="gSc-dY-JYz" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="7c7-1a-dlc"/>
+                            <constraint firstItem="Lyb-sf-qON" firstAttribute="top" secondItem="gSc-dY-JYz" secondAttribute="bottom" constant="20" id="DYh-F5-goM"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="H9I-19-0uR"/>
+                            <constraint firstItem="Lyb-sf-qON" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="HKi-iR-JPe"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="OcH-6u-07r"/>
                             <constraint firstItem="KbS-EI-Gm4" firstAttribute="top" secondItem="QTd-En-6nC" secondAttribute="bottom" constant="20" id="Zqj-z9-iiQ"/>
                             <constraint firstItem="KbS-EI-Gm4" firstAttribute="centerX" secondItem="QTd-En-6nC" secondAttribute="centerX" id="dHn-JQ-DqT"/>
+                            <constraint firstItem="QTd-En-6nC" firstAttribute="top" secondItem="Lyb-sf-qON" secondAttribute="bottom" constant="20" id="fLe-Sv-k9f"/>
                             <constraint firstItem="QTd-En-6nC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mnz-cx-FSQ"/>
-                            <constraint firstItem="QTd-En-6nC" firstAttribute="top" secondItem="gSc-dY-JYz" secondAttribute="bottom" constant="20" id="qjQ-yb-TZo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5w5-b7-0H0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="nL3-DU-M8h">
+                    <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </stackView>
             </objects>
             <point key="canvasLocation" x="887.20000000000005" y="124.58770614692655"/>
         </scene>

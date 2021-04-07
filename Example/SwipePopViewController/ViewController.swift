@@ -12,6 +12,7 @@ import SwipePopViewController
 class ViewController: UIViewController {
     
     enum Mode: Int {
+        case def
         case native
         case swipePop
     }
@@ -30,6 +31,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         switch mode {
+        case .def:
+            applyDefaultInteractivePopGesture()
         case .native:
             applyNativePopGesture()
         case .swipePop:
@@ -56,6 +59,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func applyDefaultInteractivePopGesture() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     private func applyNativePopGesture() {
