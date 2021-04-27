@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		079FAAE0FB09E1AA38606A060B38EFF8 /* Pods-SwipePopViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 440C9439D16E1CD89422AD559D9B74BD /* Pods-SwipePopViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2951B5717CB6ABD3CDBF50E886C1BC0E /* AssociationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2111F141AB601C1E666E64BF69BF6 /* AssociationPolicy.swift */; };
 		3781D298E7FB3E34D0F7297D46A8555B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		4BD0B44B633BCA6494117CAE934FE838 /* SwipePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB87380BC85A9C5B13CC9CF9DF712D2 /* SwipePopViewController.swift */; };
 		75DCA71BA737271AC5603E4B1B4E4406 /* Pods-SwipePopViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D5AC8EB674C1D314E310AFBE4DAC6 /* Pods-SwipePopViewController_Example-dummy.m */; };
@@ -15,9 +16,9 @@
 		AC918F99D77A0223672CF72620DBF860 /* Pods-SwipePopViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2D92E9485F3DAD407A7A7038CC89CC /* Pods-SwipePopViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B262A12601560B2EFF3CDC2B2A41BECA /* SwipePopViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD37FAC759ACB4BF96C581DA5D5FD8 /* SwipePopViewController-dummy.m */; };
 		B58D4898D9770CF6B64F21D6C9E91566 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		CA124F5D25ECB95100BC0249 /* PanInteractivePopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA124F5C25ECB95100BC0249 /* PanInteractivePopGesture.swift */; };
 		F0D1796DBB8E81BBA957DEA69CBF2339 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		FB14CC5D1F77EA1D91E5A4058CB6D663 /* Pods-SwipePopViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14B50BD5FA55B6B680A62A78D66DE4 /* Pods-SwipePopViewController_Tests-dummy.m */; };
+		FBC2314B6D97B337DC3C004C7DE6A3C6 /* SlideAnimationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB5CF06980A7BBEA9C9E6CDEE1C5500 /* SlideAnimationTransitioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,17 +42,18 @@
 		05D5CB67A6641DBBF649BF573B084719 /* Pods-SwipePopViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwipePopViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
 		08EB6C3A5845F78FE1CAF38DA5771D8A /* Pods-SwipePopViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwipePopViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0EC99AAA67CE7270BF4ACD624CC82C9C /* SwipePopViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwipePopViewController-Info.plist"; sourceTree = "<group>"; };
-		1B509D7F82D0D24CA791C9AE72BD04CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
-		1F7E8A01A7010A0B3E06994C1A9F5842 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
+		1B509D7F82D0D24CA791C9AE72BD04CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1F7E8A01A7010A0B3E06994C1A9F5842 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2EFD37FAC759ACB4BF96C581DA5D5FD8 /* SwipePopViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipePopViewController-dummy.m"; sourceTree = "<group>"; };
 		3D2A1DDBFE4690A0F7A3F4340F552806 /* Pods-SwipePopViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwipePopViewController_Tests.modulemap"; sourceTree = "<group>"; };
 		440C9439D16E1CD89422AD559D9B74BD /* Pods-SwipePopViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwipePopViewController_Example-umbrella.h"; sourceTree = "<group>"; };
-		4A07056DB57633843D1B3EC1B2B17473 /* SwipePopViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = SwipePopViewController.podspec; path = ../../SwipePopViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4A07056DB57633843D1B3EC1B2B17473 /* SwipePopViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwipePopViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4AF8B1D8F9FC9CFA81200EA4A1C064F2 /* Pods-SwipePopViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwipePopViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4CB7D36432E4E869AB628E4D69A317F1 /* SwipePopViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipePopViewController.debug.xcconfig; sourceTree = "<group>"; };
 		4E63789E198C14FEEC32F3278E94DC1A /* Pods-SwipePopViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwipePopViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		64A6C701CDF786D2CE5826C446A81A77 /* Pods_SwipePopViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipePopViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7CB5CF06980A7BBEA9C9E6CDEE1C5500 /* SlideAnimationTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideAnimationTransitioning.swift; path = SwipePopViewController/Classes/SlideAnimationTransitioning.swift; sourceTree = "<group>"; };
 		7D2D92E9485F3DAD407A7A7038CC89CC /* Pods-SwipePopViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwipePopViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		8029CE74565370A448159B7874A0D252 /* Pods-SwipePopViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwipePopViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8F14B50BD5FA55B6B680A62A78D66DE4 /* Pods-SwipePopViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwipePopViewController_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -61,14 +63,14 @@
 		AA7F44F80B7FE3E2A35BE73D906FD65B /* Pods-SwipePopViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwipePopViewController_Example.modulemap"; sourceTree = "<group>"; };
 		B2664CC8D396A40BC8101FA9E20C6DB9 /* Pods-SwipePopViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwipePopViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B6284B9C60D85FD5E1FF057CF0562ADE /* Pods-SwipePopViewController_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwipePopViewController_Example-Info.plist"; sourceTree = "<group>"; };
+		B6B2111F141AB601C1E666E64BF69BF6 /* AssociationPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociationPolicy.swift; path = SwipePopViewController/Classes/AssociationPolicy.swift; sourceTree = "<group>"; };
 		B6F29E9338191DA136249C132D475549 /* SwipePopViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipePopViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3504D9D4FCF80802DD247EDEC5085DA /* Pods-SwipePopViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwipePopViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C92D5AC8EB674C1D314E310AFBE4DAC6 /* Pods-SwipePopViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwipePopViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		CA124F5C25ECB95100BC0249 /* PanInteractivePopGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanInteractivePopGesture.swift; sourceTree = "<group>"; };
 		CE946AEBCDAB1B8D9504DED0B06555A4 /* Pods_SwipePopViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipePopViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B11F68BBD2178C77ABA85D03AF13CB /* Pods-SwipePopViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwipePopViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D9AA5685B7CCFC7077845713B3E00CB7 /* Pods-SwipePopViewController_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwipePopViewController_Tests-Info.plist"; sourceTree = "<group>"; };
-		EDB87380BC85A9C5B13CC9CF9DF712D2 /* SwipePopViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwipePopViewController.swift; sourceTree = "<group>"; };
+		EDB87380BC85A9C5B13CC9CF9DF712D2 /* SwipePopViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipePopViewController.swift; path = SwipePopViewController/Classes/SwipePopViewController.swift; sourceTree = "<group>"; };
 		EF63A5D173A9A07CDEE32FFBD2C714C6 /* SwipePopViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwipePopViewController.modulemap; sourceTree = "<group>"; };
 		FA352C19F4D1AA3B017891CD9FE68E9C /* SwipePopViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipePopViewController.release.xcconfig; sourceTree = "<group>"; };
 		FB119E8E0888867EB90E6777F0B4035B /* Pods-SwipePopViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwipePopViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -113,13 +115,14 @@
 		32151A1513CCDA872CC0D6C68BB3526D /* SwipePopViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CA124F5C25ECB95100BC0249 /* PanInteractivePopGesture.swift */,
+				B6B2111F141AB601C1E666E64BF69BF6 /* AssociationPolicy.swift */,
+				7CB5CF06980A7BBEA9C9E6CDEE1C5500 /* SlideAnimationTransitioning.swift */,
 				EDB87380BC85A9C5B13CC9CF9DF712D2 /* SwipePopViewController.swift */,
 				6DE3083836971B4B625F68B29DE51D0C /* Pod */,
 				5F4A4A2C6CA8313B52B8EBA7D6E85028 /* Support Files */,
 			);
 			name = SwipePopViewController;
-			path = ../../Sources/SwipePopViewController;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		4D82080D44D44B09242A48E28BE31D9D /* Targets Support Files */ = {
@@ -151,7 +154,7 @@
 				FA352C19F4D1AA3B017891CD9FE68E9C /* SwipePopViewController.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../../Example/Pods/Target Support Files/SwipePopViewController";
+			path = "Example/Pods/Target Support Files/SwipePopViewController";
 			sourceTree = "<group>";
 		};
 		6DE3083836971B4B625F68B29DE51D0C /* Pod */ = {
@@ -378,7 +381,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA124F5D25ECB95100BC0249 /* PanInteractivePopGesture.swift in Sources */,
+				2951B5717CB6ABD3CDBF50E886C1BC0E /* AssociationPolicy.swift in Sources */,
+				FBC2314B6D97B337DC3C004C7DE6A3C6 /* SlideAnimationTransitioning.swift in Sources */,
 				B262A12601560B2EFF3CDC2B2A41BECA /* SwipePopViewController-dummy.m in Sources */,
 				4BD0B44B633BCA6494117CAE934FE838 /* SwipePopViewController.swift in Sources */,
 			);
