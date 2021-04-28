@@ -13,9 +13,10 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift */; };
 		6CE8E73F6FFDFD8AD302C2BA /* Pods_SwipePopViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBCECF2FB2495AF2F41136D /* Pods_SwipePopViewController_Example.framework */; };
-		F310DDB625EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310DDB525EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift */; };
+		CA96A82526384E8D00EAAEED /* SwipePopNavigationControllerDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA96A82126384E8C00EAAEED /* SwipePopNavigationControllerDelegateTests.swift */; };
+		CA96A82726384E8D00EAAEED /* SwipeHandleGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA96A82326384E8C00EAAEED /* SwipeHandleGestureTests.swift */; };
+		CA96A82826384E8D00EAAEED /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA96A82426384E8D00EAAEED /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,14 +42,15 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SwipePopViewController_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipePopViewController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSwipePopViewControllerTests.swift; sourceTree = "<group>"; };
 		7DA745EF55C02EE18347575B /* Pods_SwipePopViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipePopViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D2C478DE2E3B96C9DF6D00 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A288BFDCC8DDECB3CCAD172B /* Pods-SwipePopViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipePopViewController_Example.release.xcconfig"; path = "Target Support Files/Pods-SwipePopViewController_Example/Pods-SwipePopViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CA96A82126384E8C00EAAEED /* SwipePopNavigationControllerDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipePopNavigationControllerDelegateTests.swift; sourceTree = "<group>"; };
+		CA96A82326384E8C00EAAEED /* SwipeHandleGestureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeHandleGestureTests.swift; sourceTree = "<group>"; };
+		CA96A82426384E8D00EAAEED /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		CEBCECF2FB2495AF2F41136D /* Pods_SwipePopViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipePopViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFDE4F5566F96D1681E4539 /* Pods-SwipePopViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipePopViewController_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SwipePopViewController_Tests/Pods-SwipePopViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2395A1EB33788096C82914 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		F310DDB525EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanInteractivePopGestureTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +139,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift */,
+				CA96A82426384E8D00EAAEED /* MockData.swift */,
+				CA96A82326384E8C00EAAEED /* SwipeHandleGestureTests.swift */,
+				CA96A82126384E8C00EAAEED /* SwipePopNavigationControllerDelegateTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				F310DDB525EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -343,8 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F310DDB625EF7FB5004CC0A5 /* PanInteractivePopGestureTests.swift in Sources */,
-				607FACEC1AFB9204008FA782 /* AddSwipePopViewControllerTests.swift in Sources */,
+				CA96A82526384E8D00EAAEED /* SwipePopNavigationControllerDelegateTests.swift in Sources */,
+				CA96A82826384E8D00EAAEED /* MockData.swift in Sources */,
+				CA96A82726384E8D00EAAEED /* SwipeHandleGestureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
