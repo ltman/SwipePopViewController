@@ -118,7 +118,7 @@ public extension UIViewController {
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.swipePopNavigationControllerDelegate = SwipePopNavigationControllerDelegate(viewControllerDelegate: self)
-        self.panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:)))
+        self.panGestureRecognizer = PanDirectionGestureRecognizer(direction: .horizontal, target: self, action: #selector(self.handlePanGesture(_:)))
         self.panGestureRecognizer?.cancelsTouchesInView = true
         self.panGestureRecognizer?.delaysTouchesBegan = true
         self.panGestureRecognizer?.maximumNumberOfTouches = 1
