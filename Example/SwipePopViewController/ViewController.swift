@@ -76,3 +76,9 @@ class ViewController: UIViewController {
     }
 
 }
+
+extension ViewController: SwipePopViewControllerDelegate {
+    func swipePopViewController(slideAnimationDidEnd completed: Bool) {
+        print("Slide animation did end. Pop completed: \(completed)")
+    }
+}

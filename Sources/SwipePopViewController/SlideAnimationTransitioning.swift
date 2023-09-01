@@ -6,7 +6,16 @@
 
 import UIKit
 
+public protocol SwipePopViewControllerDelegate: AnyObject {
+    func swipePopViewController(slideAnimationDidEnd completed: Bool)
+}
+
 class SlideAnimatedTransitioning: NSObject {
+    weak var delegate: SwipePopViewControllerDelegate?
+    
+    init(delegate: SwipePopViewControllerDelegate?) {
+        self.delegate = delegate
+    }
 }
 
 extension SlideAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
@@ -57,6 +66,10 @@ extension SlideAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
+    }
+    
+    func animationEnded(_ transitionCompleted: Bool) {
+        self.delegate?.swipePopViewController(slideAnimationDidEnd: transitionCompleted)
     }
     
 }
