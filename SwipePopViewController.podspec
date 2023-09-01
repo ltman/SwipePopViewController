@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwipePopViewController'
-  s.version          = '0.3.3'
+  s.version          = '0.3.4'
   s.summary          = 'Swipe right to pop the current View Controller'
   s.description      = 'Swipe right anywhere in View Controller to pop it out!'
 
