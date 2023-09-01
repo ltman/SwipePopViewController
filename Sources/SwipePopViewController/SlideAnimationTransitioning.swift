@@ -6,14 +6,14 @@
 
 import UIKit
 
-public protocol SlideAnimatedTransitioningDelegate: AnyObject {
-    func slideAnimationDidEnd(transitionCompleted: Bool)
+public protocol SwipePopViewControllerDelegate: AnyObject {
+    func swipePopViewController(slideAnimationDidEnd completed: Bool)
 }
 
 class SlideAnimatedTransitioning: NSObject {
-    weak var delegate: SlideAnimatedTransitioningDelegate?
+    weak var delegate: SwipePopViewControllerDelegate?
     
-    init(delegate: SlideAnimatedTransitioningDelegate?) {
+    init(delegate: SwipePopViewControllerDelegate?) {
         self.delegate = delegate
     }
 }
@@ -69,7 +69,7 @@ extension SlideAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
     }
     
     func animationEnded(_ transitionCompleted: Bool) {
-        self.delegate?.slideAnimationDidEnd(transitionCompleted: transitionCompleted)
+        self.delegate?.swipePopViewController(slideAnimationDidEnd: transitionCompleted)
     }
     
 }
