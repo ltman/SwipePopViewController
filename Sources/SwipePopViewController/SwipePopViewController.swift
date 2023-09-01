@@ -136,7 +136,7 @@ class SwipePopNavigationControllerDelegate: NSObject, UINavigationControllerDele
     }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideAnimatedTransitioning()
+        return SlideAnimatedTransitioning(delegate: fromVC as? SlideAnimatedTransitioningDelegate)
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {

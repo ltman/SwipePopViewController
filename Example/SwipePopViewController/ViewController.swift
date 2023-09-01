@@ -76,3 +76,9 @@ class ViewController: UIViewController {
     }
 
 }
+
+extension ViewController: SlideAnimatedTransitioningDelegate {
+    func slideAnimationDidEnd(transitionCompleted: Bool) {
+        print("Slide animation did end")
+    }
+}

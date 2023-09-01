@@ -6,7 +6,16 @@
 
 import UIKit
 
+public protocol SlideAnimatedTransitioningDelegate: AnyObject {
+    func slideAnimationDidEnd(transitionCompleted: Bool)
+}
+
 class SlideAnimatedTransitioning: NSObject {
+    weak var delegate: SlideAnimatedTransitioningDelegate?
+    
+    init(delegate: SlideAnimatedTransitioningDelegate?) {
+        self.delegate = delegate
+    }
 }
 
 extension SlideAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
@@ -57,6 +66,10 @@ extension SlideAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
+    }
+    
+    func animationEnded(_ transitionCompleted: Bool) {
+        self.delegate?.slideAnimationDidEnd(transitionCompleted: transitionCompleted)
     }
     
 }
