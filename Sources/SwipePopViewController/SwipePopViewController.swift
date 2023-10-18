@@ -28,12 +28,12 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 fileprivate enum ViewAssociatedKeys {
-    static var firstTranslation = "swipepop.first_translation"
-    static var panGestureRecognizer = "swipepop.pan_gesture_recognizer"
-    static var selfNavigationControllerDelegate = "swipepop.self_navigation_controller_delegate"
-    static var percentDrivenInteractiveTransition = "swipepop.percent_drivenInteractive_transition"
-    static var panGestureInteractor = "swipepop.pan_gesture_interactor"
-    static var swipePopNavigationControllerDelegate = "swipepop.swipe_pop_navigation_controller_delegate"
+    static var firstTranslation: Void?
+    static var panGestureRecognizer: Void?
+    static var selfNavigationControllerDelegate: Void?
+    static var percentDrivenInteractiveTransition: Void?
+    static var panGestureInteractor: Void?
+    static var swipePopNavigationControllerDelegate: Void?
 }
 
 extension UIViewController {
