@@ -222,7 +222,9 @@
 				793E542F316F0BBBE880B5DB0F99BC7F /* Products */,
 				4D82080D44D44B09242A48E28BE31D9D /* Targets Support Files */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;

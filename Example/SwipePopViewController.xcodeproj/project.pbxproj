@@ -103,7 +103,9 @@
 				48D714AF60B4998A14F0021B /* Pods */,
 				024D6A1072FB048DAF828D80 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
@@ -223,6 +225,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3HP9CY8GRT;
 						LastSwiftMigration = 1230;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -529,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DFFDE4F5566F96D1681E4539 /* Pods-SwipePopViewController_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 3HP9CY8GRT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -551,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A44837C05A7F17CCBEE7B86 /* Pods-SwipePopViewController_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 3HP9CY8GRT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
